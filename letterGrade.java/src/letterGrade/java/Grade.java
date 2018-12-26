@@ -1,11 +1,12 @@
 package letterGrade.java;
+import java.util.Scanner;
 
 public class Grade {
 
 	public Grade() {
 	}
 	
-	public char letterGrade(int score) 
+	public static char letterGrade(int score) 
 	{
 		char grade;
 		if (score < 0 || score > 100)
@@ -22,5 +23,20 @@ public class Grade {
 			grade = 'F';
 		return grade;
 	}
+	
+	 public static void main(String args[])
+	 {
+		 Scanner reader = new Scanner(System.in);  // Reading from System.in
+		 int grade;
+		 char letter;
+		 do{
+			 System.out.print("Enter a score: ");
+			 grade = reader.nextInt(); // Scans the next token of the input as an int.
+			 letter = letterGrade(grade);
+			 System.out.println(letter);
+		 }while(grade != 10000);
+		 
+		 reader.close();
+	 }
 
 }
